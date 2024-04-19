@@ -31,7 +31,7 @@ resource "aws_db_subnet_group" "main" {
   tags = merge(var.tags, {Name="${var.env}-sbg" })
 }
 
-data "aws_db_parameter_group" "main" {
+resource "aws_db_parameter_group" "main" {
   name = "${var.name}-${var.env}-dbpg"
   family = "aurora-mysql5.7"
 }
